@@ -9,8 +9,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Message />
-      <Button title={show ? "Fechar Mensagem" : "Exbir Mensagem"} />
+      {show && <Message />}
+      <Button title={show ? "Fechar Mensagem" : "Exbir Mensagem"}
+      onPress={() => setShow((prevState) => !prevState)} />
     </View>
   );
 }
